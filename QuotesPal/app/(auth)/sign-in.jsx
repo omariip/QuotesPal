@@ -2,8 +2,11 @@ import { View, Text, StyleSheet, Image, TextInput, Button } from "react-native";
 import { widthScale, heightScale, moderateScale } from "../../utils/scale";
 import React from "react";
 import CustomButton from "../../components/Button";
+import { useRouter } from "expo-router";
 
 const SignIn = () => {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <View style={styles.quotesBackground}>
@@ -54,7 +57,9 @@ const SignIn = () => {
 
       <View style={styles.signUpContainer}>
         <CustomButton
-          onPress={() => {}}
+          onPress={() => {
+            router.push("/sign-up");
+          }}
           title="Sign Up"
           customWidth={widthScale(158)}
           customHeight={heightScale(42)}
