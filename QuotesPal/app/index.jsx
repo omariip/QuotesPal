@@ -22,12 +22,14 @@ const SplashScreen = () => {
 
   const [loaded, error] = useFonts({
     "Roboto-Regular": require("../assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-Medium": require("../assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-Light": require("../assets/fonts/Roboto-Light.ttf"),
     "AnekDevanagari-Regular": require("../assets/fonts/AnekDevanagari-Regular.ttf"),
     "Crushed-Regular": require("../assets/fonts/Crushed-Regular.ttf"),
     "Homenaje-Regular": require("../assets/fonts/Homenaje-Regular.ttf"),
     "Raleway-Bold": require("../assets/fonts/Raleway-Bold.ttf"),
     "Raleway-Regular": require("../assets/fonts/Raleway-Regular.ttf"),
-  });
+  })
 
   useEffect(() => {
     if (loaded || error) {
@@ -51,7 +53,16 @@ const SplashScreen = () => {
       <View style={styles.rectangle} />
       <View style={styles.buttonContainer}>
         <CustomButton
-          onPress={() => router.push("/sign-in")}
+          onPress={() => router.replace("/sign-in")}
+          title="Continue"
+          customWidth={widthScale(177)}
+          customHeight={heightScale(48)}
+          fontSize={moderateScale(20)}
+        />
+      </View>
+      <View>
+        <CustomButton
+          onPress={() => router.push("/feed")}
           title="Continue"
           customWidth={widthScale(177)}
           customHeight={heightScale(48)}
