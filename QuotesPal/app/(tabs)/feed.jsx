@@ -21,6 +21,10 @@ const Feed = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
+        <Image
+          source={require("../../assets/images/quotesBackground.png")}
+          style={styles.quotesBackgroundImage}
+        />
         <Text style={styles.logoText}>QuotesPal</Text>
       </View>
       {/* <View><Text>{Dimensions.get("window").height}</Text> */}
@@ -76,7 +80,7 @@ const Feed = () => {
               </View>
               <View style={styles.quoteTextContainer}>
                 <Text style={styles.quoteText}>{post.quote}</Text>
-                <Text style={styles.quoteAuthor}>- {post.author}</Text>
+                <Text style={styles.quoteAuthor}>- {post.quoteAuthor}</Text>
               </View>
               <View style={[styles.quoteIcon2, styles.qlikeuoteIcon]}>
                 {/* <FontAwesome6 name="quote-right" size={37} color="black" /> */}
@@ -153,21 +157,12 @@ const Feed = () => {
               </View>
               <View style={styles.quoteTextContainer}>
                 <Text style={styles.quoteText}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
-                  explicabo esse illo magnam atque asperiores, optio distinctio
-                  in quidem dicta, iusto repudiandae. Error eaque, voluptatem
-                  aliquid tempora officiis soluta veniam enim debitis tenetur
-                  labore, asperiores ut pariatur voluptas in commodi quam iste
-                  beatae adipisci quia, perferendis nulla. Deleniti officia
-                  sequi tenetur fugit possimus aut nesciunt, veritatis
-                  necessitatibus voluptatem sapiente. Eum nesciunt officiis
-                  asperiores fugit nisi laudantium deserunt delectus maxime
-                  dicta sit modi, sunt fuga dolores dignissimos reprehenderit
-                  nam animi, itaque reiciendis rerum, fugiat aspernatur aperiam
-                  temporibus vitae. Cupiditate voluptatem animi vero, sunt
-                  dolorum ea rem ex excepturi itaque? Nihil, laudantium!
+                  I declare after all there is no enjoyment like reading! How
+                  much sooner one tires of any thing than of a book! -- When I
+                  have a house of my own, I shall be miserable if I have not an
+                  excellent library.
                 </Text>
-                <Text style={styles.quoteAuthor}>- {post.author}</Text>
+                <Text style={styles.quoteAuthor}>- {post.quoteAuthor}</Text>
               </View>
               <View style={[styles.quoteIcon2, styles.qlikeuoteIcon]}>
                 {/* <FontAwesome6 name="quote-right" size={37} color="black" /> */}
@@ -244,7 +239,7 @@ const Feed = () => {
               </View>
               <View style={styles.quoteTextContainer}>
                 <Text style={styles.quoteText}>{post.quote}</Text>
-                <Text style={styles.quoteAuthor}>- {post.author}</Text>
+                <Text style={styles.quoteAuthor}>- {post.quoteAuthor}</Text>
               </View>
               <View style={[styles.quoteIcon2, styles.qlikeuoteIcon]}>
                 {/* <FontAwesome6 name="quote-right" size={37} color="black" /> */}
@@ -287,9 +282,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#25485E",
     justifyContent: "flex-end",
   },
+  quotesBackgroundImage: {
+    transform: [{ scale: 0.7 }],
+    width: widthScale(300),
+    height: heightScale(200),
+    position: "relative",
+    top: heightScale(90),
+    left: widthScale(150),
+    opacity: 0.5,
+  },
   logoContainer: {
-    alignSelf: "center",
+    alignSelf: "flex-start",
     margin: moderateScale(5),
+    marginLeft: widthScale(20),
   },
   logoText: {
     fontSize: moderateScale(25),
@@ -300,8 +305,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: Dimensions.get("window").width,
     height: heightScale(750),
-    borderTopRightRadius: 50,
-    borderTopLeftRadius: 50,
+    borderTopRightRadius: 25,
+    borderTopLeftRadius: 25,
     // position: "absolute",
     // alignSelf: "flex-end",
     // bottom: 0,
@@ -339,7 +344,8 @@ const styles = StyleSheet.create({
   },
   quoteText: {
     fontSize: moderateScale(18),
-    fontFamily: "Roboto-Medium",
+    fontFamily: fonts.Roboto_Medium,
+    lineHeight: 25,
   },
   quoteAuthor: {
     fontFamily: fonts.Roboto_Light,
@@ -411,13 +417,13 @@ const styles = StyleSheet.create({
     fontFamily: fonts.Roboto_Light,
     color: "#9B9B9B",
     marginLeft: widthScale(4),
-    fontSize: moderateScale(12)
+    fontSize: moderateScale(12),
   },
   shareText: {
     fontFamily: fonts.Roboto_Light,
     color: "#9B9B9B",
     marginLeft: widthScale(4),
-    fontSize: moderateScale(12)
+    fontSize: moderateScale(12),
   },
 });
 
