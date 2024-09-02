@@ -1,11 +1,11 @@
-import { Dimensions, Platform, StatusBar } from "react-native";
-
+import { Dimensions, Platform, StatusBar, PixelRatio } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 let { width, height } = Dimensions.get("window");
 
 if (Platform.OS === "android") {
   height = height + StatusBar.currentHeight;
 }
-console.log(Dimensions.get("window").height, height);
+
 const guidelineBaseWidth = 430;
 const guidelineBaseHeight = 932;
 
