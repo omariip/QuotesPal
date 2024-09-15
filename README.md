@@ -3,7 +3,7 @@
     <img src="QuotesPal/assets/logo/logo.png" alt="Logo" width="250">
   </a>
 
-<h3 align="center">Mobichanic</h3>
+<h3 align="center">QuotesPal</h3>
 <p align="center">
 A React Native app for managing book quotes, creating customizable quote designs, and sharing them with
 communities in-app, functioning as a social media platform for quotes  </p>
